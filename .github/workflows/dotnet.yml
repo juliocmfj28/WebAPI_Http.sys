@@ -9,9 +9,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+defaults:
+  run:
+    working-directory: ./build
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -20,12 +23,5 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 2.1.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
     - name: Run
-      working-directory: ./build
       run: dotnet run
