@@ -27,7 +27,5 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Run
-      with:
-        FOLDER: build/
-        run: dotnet run 
-      
+      working-directory: ./build
+      run: dotnet run
