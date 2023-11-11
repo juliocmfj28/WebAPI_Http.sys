@@ -24,4 +24,4 @@ jobs:
       with:
         dotnet-version: 2.1.x
     - name: Run
-      run: dotnet run
+      run: WebAPI_Http.sys.exe
